@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movies";
+import "./App.css";
 import PropTypes from "prop-types";
 
 class App extends React.Component{
@@ -39,6 +40,7 @@ getMovies = async () => { // async : wait
                       title={movie.title} 
                       summary={movie.summary} 
                       poster={movie.medium_cover_image}
+                      genres={movie.genres}
                       />
                   ))}
                </div>

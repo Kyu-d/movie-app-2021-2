@@ -11,27 +11,41 @@ class App extends React.Component{
 getMovies = async () => { // async : wait
   const {data: {data : {movies}}} = await axios.get("https://yts.mx/api/v2/list_movies.json?sort_by=rating");
   this.setState({ movies, isLoading: false });
-} // awiat : wait, async must use // desturctung
+} // await : wait, async must use // desturctung
 
 
   componentDidMount(){
     this.getMovies();
   }
-
+  
   render (){ // render method
     const {isLoading, movies} = this.state;
-    return <div>
-            {isLoading ? "Loading"
-             : movies.map(movie => (
-              <Movie 
-              key={movie.id}
-              id={movie.id} 
-              year={movie.year} 
-              title={movie.title} 
-              summary={movie.summary} 
-              poster={movie.medium_cover_image} />
-            ))}
-    </div>
+    return (
+        <section class="container">
+            {isLoading ? ( 
+                
+                <div class="loader">
+                  <span class="loader_text">Loading...</span>
+                 </div>
+                 
+            ) : (
+
+                <div class="movies">
+                    {movies.map(movie => (
+                      <Movie 
+                      key={movie.id}
+                      id={movie.id} 
+                      year={movie.year} 
+                      title={movie.title} 
+                      summary={movie.summary} 
+                      poster={movie.medium_cover_image}
+                      />
+                  ))}
+               </div>
+
+             )}
+        </section>
+    )
   };
 }
 

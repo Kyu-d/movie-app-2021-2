@@ -1,13 +1,14 @@
 
 .movie {
     background-color: #ffffff;
-    width: 30%;
+    width: 600px;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #eeeeee;
     margin: 100px;
     position: relative;
     border-radius: 20px;
+    box-shadow: 0px 0px 30px #e0e0e0;
 }
 
 .movie img {

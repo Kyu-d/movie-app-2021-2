@@ -23,22 +23,22 @@ getMovies = async () => { // async : wait
     const {isLoading, movies} = this.state;
     return (
         <section class="container">
-            {isLoading ? ( 
-                
+            {isLoading ? (
+
                 <div class="loader">
                   <span class="loader_text">Loading...</span>
                  </div>
-                 
+
             ) : (
 
                 <div class="movies">
                     {movies.map(movie => (
-                      <Movie 
+                      <Movie
                       key={movie.id}
-                      id={movie.id} 
-                      year={movie.year} 
-                      title={movie.title} 
-                      summary={movie.summary} 
+                      id={movie.id}
+                      year={movie.year}
+                      title={movie.title}
+                      summary={movie.summary}
                       poster={movie.medium_cover_image}
                       genres={movie.genres}
                       />
